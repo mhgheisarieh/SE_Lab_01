@@ -31,7 +31,7 @@ def process_input(input):
         if operation == 4:
             print(a / b)
         operation = 0
-
+        status = 0
 
 while(True):
     input_ = input()
