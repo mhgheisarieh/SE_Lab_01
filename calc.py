@@ -6,33 +6,43 @@ operation = 0
 def process_input(input):
     global a, b, status, operation
     if status == 0:
+        print("Enter the operator:")
         a = int(input)
         status = 1
         return
     if status == 1:
         if input == "+":
             operation = 1
-        if input == "-":
+        elif input == "-":
             operation = 2
-        if input == "*":
+        elif input == "*":
             operation = 3
-        if input == "/":
+        elif input == "/":
             operation = 4
+        else:
+            print("Invalid operator")
+            print("Enter the operator:")
+            return
+        print("Enter second operand:")
         status = 2
         return
     if status == 2:
         b = int(input)
         if operation == 1:
-            print(a + b)
+            print("a + b is: " + str(a + b))
         if operation == 2:
-            print(a - b)
+            print("a - b is: " + str(a - b))
         if operation == 3:
-            print(a * b)
+            print("a * b is: " + str(a * b))
         if operation == 4:
-            print(a / b)
+            print("a / b is: " + str(a / b))
         operation = 0
         status = 0
+        print("Enter first operand:")
 
+
+
+print("Enter first operand:")
 while(True):
     input_ = input()
     if input_ == 'end':
