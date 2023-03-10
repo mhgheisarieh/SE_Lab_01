@@ -7,7 +7,12 @@ def process_input(input):
     global a, b, status, operation
     if status == 0:
         print("Enter the operator:")
-        a = int(input)
+        try: 
+            a = int(input)
+        except:
+            print("Invalid number.")
+            print("Enter first operand:")
+            return
         status = 1
         return
     if status == 1:
@@ -27,7 +32,12 @@ def process_input(input):
         status = 2
         return
     if status == 2:
-        b = int(input)
+        try:
+            b = int(input)
+        except:
+            print("Invalid number.")
+            print("Enter second operand:")
+            return
         if operation == 1:
             print("a + b is: " + str(a + b))
         if operation == 2:
